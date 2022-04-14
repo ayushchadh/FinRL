@@ -102,7 +102,12 @@ class DRLAgent:
             tb_log_name=tb_log_name,
             callback=TensorboardCallback(),
         )
-        return model
+        
+        model.save(
+            f"./{config.TRAINED_MODEL_DIR}/{model_name.upper()}_{total_timesteps // 1000}k_{iter_num}"
+        )
+        return model, f"{"./" + config.TRAINED_MODEL_DIR}/{model_name.upper()}_{total_timesteps // 1000}k_{iter_num}"
+        
 
     @staticmethod
     def DRL_prediction(model, environment, deterministic=True):
