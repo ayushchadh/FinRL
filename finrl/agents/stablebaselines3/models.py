@@ -210,9 +210,9 @@ class DRLEnsembleAgent:
             callback=TensorboardCallback(),
         )
         model.save(
-            f"./{config.TRAINED_MODEL_DIR}/{model_name.upper()}_{total_timesteps // 1000}k_{iter_num}"
+            f"{config.TRAINED_MODEL_DIR}/{model_name.upper()}_{total_timesteps // 1000}k_{iter_num}"
         )
-        return model, f"{"./" + config.TRAINED_MODEL_DIR}/{model_name.upper()}_{total_timesteps // 1000}k_{iter_num}"
+        return model, f"{config.TRAINED_MODEL_DIR}/{model_name.upper()}_{total_timesteps // 1000}k_{iter_num}"
 
     @staticmethod
     def get_validation_sharpe(iteration, model_name):
