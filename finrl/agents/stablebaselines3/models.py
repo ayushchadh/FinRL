@@ -103,12 +103,12 @@ class DRLAgent:
             callback=TensorboardCallback(),
         )
         
-        model.save(
+        #model.save(
             f"{config.TRAINED_MODEL_DIR}/{tb_log_name.upper()}_{total_timesteps // 1000}k_{iter_num}"
            
         )
-        print (f"{config.TRAINED_MODEL_DIR}/{tb_log_name.upper()}_{total_timesteps // 1000}k_{iter_num}")
-        return model, f"{config.TRAINED_MODEL_DIR}/{tb_log_name.upper()}_{total_timesteps // 1000}k_{iter_num}"
+        #print (f"{config.TRAINED_MODEL_DIR}/{tb_log_name.upper()}_{total_timesteps // 1000}k_{iter_num}")
+        return model
         
 
     @staticmethod
